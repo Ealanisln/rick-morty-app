@@ -6,11 +6,11 @@ async function fetchLocations() {
 }
 
 async function Locations() {
-  const locations = await fetchLocations();
+  const characters = await fetchLocations();
 
   return (
     <>
-      {locations.map((Location) => (
+      {characters.map((Location) => (
         <Card key={Location.id} data={Location} />
       ))}
     </>
