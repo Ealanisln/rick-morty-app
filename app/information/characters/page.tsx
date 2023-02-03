@@ -1,4 +1,5 @@
-import Card from '@/components/Card/Card';
+import { Card, Navigator} from '@/components/';
+import { Routes } from '@/models';
 import { getCharacters } from './services';
 
 async function fetchCharacters() {
@@ -10,6 +11,7 @@ async function Characters() {
 
   return (
     <>
+      <Navigator pathNames={[Routes.HOME, Routes.LOCATIONS]} />
       {characters.map((character, index) => (
         <Card key={index} data={character} />
       ))}

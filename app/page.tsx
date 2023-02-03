@@ -1,20 +1,16 @@
-import Card from '@/components/Card/Card';
-import { getLocations } from './services';
+import { Navigator } from "@/components";
+import { Routes } from "@/models";
 
-async function fetchLocations() {
-  return await getLocations();
-}
 
-async function Locations() {
-  const locations = await fetchLocations();
-
+function App() {
   return (
-    <>
-      {locations.map((Location) => (
-        <Card key={Location.id} data={Location} />
-      ))}
-    </>
+  <div> 
+    <h1> Welcome to Rick and morty app </h1>
+    <h2> Which one do you want to see?</h2>
+    <Navigator pathNames={[Routes.CHARACTERS, Routes.LOCATIONS]} />
+  </div>
   );
-}
+};
 
-export default Locations
+export default App;
+
